@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 8080
+//const port = 8080
 const bodyParser = require("body-parser");
 
 app.use(
@@ -11,7 +11,7 @@ app.use(
 
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send('Hello World@@@@!'))
+app.get('/', (req, res) => res.send('Hello World.Changes with webhook!'))
 
 
 app.post("/echo", function(req, res) {
@@ -28,4 +28,13 @@ app.post("/echo", function(req, res) {
   });
 });
 
-app.listen(process.env.PORT || 5000, () => console.log(`My dialogflow Example app listening on port 8080`))
+app.post("/webhook", function(req, res) {
+
+  return res.json({
+    speech: "Text is coming from webhook Heroku",
+    displayText: "Text is coming from webhook Heroku",
+    source: "googledilagoueapp"
+  });
+});
+
+app.listen(process.env.PORT || 5000, () => console.log(`My dialogflow Example app listening on port 5000`))
