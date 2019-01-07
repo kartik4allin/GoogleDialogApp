@@ -30,7 +30,9 @@ app.post("/echo", function(req, res) {
 
 app.post("/webhook", function(req, res) {
 
+console.log('request body  channel'+req.body.queryResult.parameters['channel']);
 
+let channel =req.body.queryResult.parameters['channel'];
 
   return res.json({
     "fulfillmentText": "",
@@ -39,7 +41,7 @@ app.post("/webhook", function(req, res) {
         {
           "text": {
             "text": [
-                "Text is coming from webhook Heroku"
+                "Text is coming from webhook Heroku.Adding channel "+channel
               ]
             }
         }
