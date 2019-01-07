@@ -28,4 +28,4 @@ app.post("/echo", function(req, res) {
   });
 });
 
-app.listen(port, () => console.log(`My dialogflow Example app listening on port 8080`))
+app.listen(process.env.PORT || 5000, () => console.log(`My dialogflow Example app listening on port 8080`))
