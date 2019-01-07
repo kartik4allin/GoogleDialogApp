@@ -30,9 +30,10 @@ app.post("/echo", function(req, res) {
 
 app.post("/webhook", function(req, res) {
 
+
   return res.json({
-    speech: "Text is coming from webhook Heroku",
-    displayText: "Text is coming from webhook Heroku",
+    fulfillmentText: "",
+    fulfillmentMessages:[{"text":{"text":"Text is coming from webhook Heroku"}}] ,
     source: "googledilagoueapp"
   });
 });
