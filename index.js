@@ -9,6 +9,7 @@ let apiKey = '96726b25a6d9449f72c548f18ecdd831';
 let city = 'portland';
 let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
 
+let port = process.env.PORT || 5000;
 app.use(
   bodyParser.urlencoded({
     extended: true
@@ -51,4 +52,4 @@ app.post("/webhook", function(req, res) {
 
 });
 
-app.listen(process.env.PORT || 5000, () => console.log(`My dialogflow Example app listening on port 5000`))
+app.listen(port, () => console.log(`My dialogflow Example app listening on port ${port}`))
