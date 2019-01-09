@@ -79,7 +79,7 @@ app.post("/webhookSocket", function(req, res) {
                 {
                   "text": {
                     "text": [
-                        "Text is coming from webhook Heroku.Adding channel "+channel+"and the price is "+temp_min
+                        "Text is coming from webhook Socket!! Heroku.Adding channel "+channel+" and the price is "+temp_min
                       ]
                     }
                 }
@@ -91,4 +91,4 @@ app.post("/webhookSocket", function(req, res) {
     });
 });
 
-app.listen(port, () => console.log(`Googledialogflow Example app!! listening on port ${port}`));
+app.listen(port, () => console.log(`Googledialogflow Example app@@ listening on port ${port}`));
