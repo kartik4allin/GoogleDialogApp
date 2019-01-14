@@ -17,6 +17,11 @@ var socketclientScript = require('./socketclient');
 
 io.on('connection', function (socket) {
   console.log('Socket on connection with client!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+
+ socket.on('disconnect',function(socket){
+   onsole.log('Socket disconnected !!!!!!!!! ');
+ });
+
   socket.emit('fromServer', { 'channel': channel });
 });
 

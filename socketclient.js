@@ -1,4 +1,4 @@
-var socket = require('socket.io-client')();
+var socket = require('socket.io-client')('https://googledialogflowapp.herokuapp.com:40052');
 socket.on('connect', function(){
   console.log('client is connected!!!!');
 });
