@@ -13,6 +13,10 @@ let port = process.env.PORT || 5000;
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
+io.on('connection', function (socket) {
+  console.log('Socket on connection with client!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+  socket.emit('fromServer', { 'channel': channel });
+});
 
 
 app.use(
@@ -67,10 +71,7 @@ app.post("/webhookSocket", function(req, res) {
         console.log('body:', body);
         var weather =JSON.parse(body);
         temp_min = weather.main.temp_min;
-        io.on('connection', function (socket) {
-          console.log('Socket on connection with client!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-          socket.emit('fromServer', { 'channel': channel });
-        });
+
 
 
         return res.json({
