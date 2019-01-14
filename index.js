@@ -12,7 +12,7 @@ let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiK
 let port = process.env.PORT || 5000;
 
 var socketclientScript = require('./websocketserver');
-var socketclientScript = require('./websocketclient');
+//var socketclientScript = require('./websocketclient');
 
 
 // var server = require('http').Server(app);
