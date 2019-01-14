@@ -11,24 +11,21 @@ let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiK
 
 let port = process.env.PORT || 5000;
 
-var socketclientScript = require('./websocketserver');
-var socketclientScript = require('./websocketclient');
 
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
-// var server = require('http').Server(app);
-// var io = require('socket.io')(server);
-//
-// var socketclientScript = require('./socketclient');
-//
-// io.on('connection', function (socket) {
-//   console.log('Socket on connection with client!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@@@');
-//
-//  socket.on('disconnect',function(socket){
-//    onsole.log('Socket disconnected !!!!!!!!! ');
-//  });
-//
-//   socket.emit('fromServer', { 'channel': channel });
-// });
+var socketclientScript = require('./socketclient');
+
+io.on('connection', function (socket) {
+  console.log('Socket on connection with client!!!!!!!!!!@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+
+ socket.on('disconnect',function(socket){
+   onsole.log('Socket disconnected !!!!!!!!! ');
+ });
+
+  socket.emit('fromServer', { 'channel': channel });
+});
 
 
 app.use(
