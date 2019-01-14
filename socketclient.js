@@ -8,3 +8,4 @@ socket.on('event', function(data){
 socket.on('disconnect', function(){
   console.log('client is disconnected!!!!');
 });
+console.log('Socket Client!!!!');
