@@ -2,7 +2,7 @@
 var WebSocketServer = require('websocket').server;
 var http = require('http');
 
-let port = process.env.PORT || 8080;
+let port = (process.env.PORT || 8080)+100;
 
 var server = http.createServer(function(request, response) {
     console.log((new Date()) + ' Received request for ' + request.url);
